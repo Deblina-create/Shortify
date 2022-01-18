@@ -1,14 +1,13 @@
-import React, { useState, useEffect, useContext } from "react"
-import { useParams } from "react-router"
-import { FirebaseContext } from "../../firebase"
+import React from "react"
+import Shortened from "../../components/shortened/Shortened"
+import Shortener from "../../components/shortener/Shortener"
 import './Home.css'
 
 const Home = () =>{
-    
-
-
     return (
-        <div>
+        <div className="container">
+            <Shortener />
+            <Shortened  />
         </div>
 
     )
