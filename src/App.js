@@ -12,7 +12,7 @@ const App = () => {
         <header>Shortify</header>
         <main>
           <Switch>
-            <Route path="/" component={Home} />
+            <Route path="/:slug?" component={Home} />
           </Switch>
         </main>
         <footer>
