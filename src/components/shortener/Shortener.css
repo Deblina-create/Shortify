@@ -1,0 +1,41 @@
+.check-icon{
+    margin-left: 20px;
+    width: 1.5rem;
+    color: rgb(27, 207, 36);
+}
+
+.inputbox{
+    border-radius: 5px;
+    margin-left: 50px;
+    width: 60%;
+    height: 40px;
+    background-color: rgb(154, 156, 156);
+    color: black;
+}
+.shortenbtn{
+    border-radius: 5px;
+    margin-left: 75px;
+    height: 40px;
+    width: 20%;
+
+}
+
+.shortenbtn:hover{
+    color: black;
+    cursor: pointer;
+
+}
+
+.shortnercontainer{
+    display: flex;
+    padding-top: 30px;
+}
+
+.progress-parent {
+    width: 100%;
+    text-align: center;
+}
+
+.progress {
+    width: 10rem;
+}
