@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react"
 import uniqueSlug from 'unique-slug'
 import { FirebaseContext } from "../../firebase"
 import check_img from "../../assets/images/check-circle-regular.svg"
-import './Shortener.css'
+import './Shortener.scss'
 import progress_img from "../../assets/images/progress.gif"
 
 
@@ -51,7 +51,8 @@ const Shortener = (props) => {
             {props.slug ? <div className="progress-parent">
                 <img className="progress" src={progress_img} alt="progress"></img>
             </div> : <>
-                <input className="inputbox " data-testid="inputOriginalUrl" onChange={handleUrlChange} type="text" placeholder="Enter your url to shorten" value={originalUrl}></input>{vaildUrlChecked ? <img className="check-icon" src={check_img} alt="check" /> : ''}
+                <input data-testid="inputOriginalUrl" onChange={handleUrlChange} type="text" placeholder="Enter your url to shorten" value={originalUrl}></input>{vaildUrlChecked ?
+                    <img className="check-icon" src={check_img} alt="check" /> : ''}
                 <button className={shortenButtonText === "Shorten" ? 'primary-dark shortenbtn' : 'secondary shortenbtn'} disabled={!vaildUrlChecked} data-testid="btnShorten" onClick={handleShortening} >{shortenButtonText}</button>
             </>}
         </div>
