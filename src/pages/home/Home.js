@@ -3,7 +3,7 @@ import { useParams } from "react-router"
 import Shortened from "../../components/shortened/Shortened"
 import Shortener from "../../components/shortener/Shortener"
 import { FirebaseContext } from "../../firebase"
-import './Home.css'
+import './Home.scss'
 
 const Home = () =>{
     const { slug } = useParams()

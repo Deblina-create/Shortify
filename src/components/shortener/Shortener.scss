@@ -1,0 +1,43 @@
+
+
+
+
+.shortnercontainer {
+    display: flex;
+    padding-top: 30px;
+    .check-icon {
+        margin-left: 3px;
+        width: 1.5rem;
+        color: rgb(27, 207, 36);
+    }    
+    .progress-parent {
+        width: 100%;
+        text-align: center;
+        .progress {
+            width: 10rem;
+        }
+    }
+    input {
+        border-radius: 5px;
+        margin-left: 10px;
+        width: 60%;
+        height: 40px;
+        background-color: rgb(252, 250, 252);
+        color: black;
+    }
+    .shortenbtn {
+        border-radius: 5px;
+        margin-left: 20px;
+        height: 40px;
+        width: 20%;
+        &:hover {
+            color: black;
+            cursor: pointer;
+        }
+       
+}
+}
+
+
+
+

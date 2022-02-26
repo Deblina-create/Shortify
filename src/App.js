@@ -1,6 +1,6 @@
 
 import { Route, Switch } from 'react-router';
-import './App.css';
+import './App.scss';
 import firebase, { FirebaseContext } from './firebase';
 import Home from './pages/home/Home';
 

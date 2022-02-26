@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { getFirstNCharacters } from "../../Utilities";
-import "./Shortened.css"
+import "./Shortened.scss"
 
 
 const Shortened = (props) => {
