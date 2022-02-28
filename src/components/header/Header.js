@@ -5,19 +5,17 @@ import './Header.scss'
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-    const { authState, authDispatch } = useContext(AuthContext);
+    const authContext = useContext(AuthContext);
     const history = useHistory()
-    console.log("Route location", history.location)
-    console.log("Route action", history.action)
 
     const PartialHeaderContent = () => {
         return (
             <>
                 <div className="loginContainer">
-                    {authState.email !== "" ? <><span className="loginContainerChild">{authState.email}</span>
+                    {authContext.authState.email !== "" ? <><span className="loginContainerChild">{authContext.authState.email}</span>
                         <button className="loginContainerChild" onClick={(e) => {
                             e.preventDefault()
-                            authDispatch({
+                            authContext.authDispatch({
                                 type: "SIGN_ACTION",
                                 payload: {
                                     email: "",

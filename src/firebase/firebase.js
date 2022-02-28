@@ -12,5 +12,4 @@ class Firebase {
 }
 
 const firebase = new Firebase();
-//console.log("firebse Log", firebase);
 export default firebase;
