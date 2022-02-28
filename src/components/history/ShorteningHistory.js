@@ -1,15 +1,13 @@
 import React, { useContext } from 'react'
 import AuthContext from '../../auth/AuthContext';
-import { FirebaseContext } from '../../firebase';
 import './ShorteningHistory.scss'
 
 const ShorteningHistory = () => {
-    const fb = useContext(FirebaseContext)
-    const { authState } = useContext(AuthContext);
+    const authContext = useContext(AuthContext);
 
     return (
         <div className='containerHistory'>
-            {authState.email !== "" && <table className='container'>
+            {authContext && authContext.authState && authContext.authState.email !== "" && <table className='container'>
             <thead>
                 <tr>
                     <th className='originalurlplace'>
@@ -21,7 +19,7 @@ const ShorteningHistory = () => {
                 </tr>
                 </thead>
                 <tbody className='originalurlplace'>
-                {authState.urlHistory && authState.urlHistory.map((historyItem, index) => <tr key={index}>
+                {authContext && authContext.authState && authContext.authState.urlHistory && authContext.authState.urlHistory.map((historyItem, index) => <tr key={index}>
                     <td>
                         {historyItem.originalUrl}
                     </td>

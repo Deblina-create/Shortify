@@ -9,7 +9,7 @@ import AuthContext from "../../auth/AuthContext"
 
 const Shortener = (props) => {
     const fb = useContext(FirebaseContext)
-    const { authState } = useContext(AuthContext);
+    const authContext = useContext(AuthContext);
     const [originalUrl, setOriginalUrl] = useState("")
     const [vaildUrlChecked, setValidUrlChecked] = useState(false)
     const [shortenButtonText, setShortenButtonText] = useState("Shorten");
@@ -23,7 +23,7 @@ const Shortener = (props) => {
         const urlSingleItem = {
             originalUrl,
             slug: newSlug,
-            email: authState.email
+            email: authContext.authState.email
         }
 
         fb.db.collection("UrlItems")
