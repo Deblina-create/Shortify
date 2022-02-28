@@ -1,17 +1,13 @@
-header {
-  color: aquamarine;
-  font-size: 5rem;
-  text-align: center;
-}
-
 footer {
-  margin-top: 100px;
-  padding-top: 20px;
-  color: aquamarine;
-  font-size: 1rem;
+  position: fixed;
+  margin-top: 15%;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(15, 104, 74);
+  padding: 1%;
+  color: white;
   text-align: center;
-  height: 60px;
-  border-top: 1px solid gray;
 
 }
 
