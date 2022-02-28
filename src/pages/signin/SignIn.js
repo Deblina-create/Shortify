@@ -29,7 +29,6 @@ const SignIn = () => {
                     setError(true)
                     return
                 }
-                console.log("Signing In user", email)
                 authDispatch({
                     type: "SIGN_ACTION",
                     payload: { email }

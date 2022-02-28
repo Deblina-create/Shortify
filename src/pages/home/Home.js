@@ -10,8 +10,9 @@ import './Home.scss'
 const Home = () => {
     const { slug } = useParams()
     const fb = useContext(FirebaseContext)
-    const { authState, authDispatch } = useContext(AuthContext);
+    const authContext = useContext(AuthContext);
     const [urlItem, setUrlItem] = useState(null)
+    const emailAuth = authContext && authContext.authState && authContext.authState.email ? authContext.authState.email : ""
 
 
     useEffect(() => {
@@ -24,7 +25,6 @@ const Home = () => {
                         return doc.data().originalUrl;
                     })
                     const originalLink = items[0];
-                    console.log("AA", originalLink);
                     window.location.href = originalLink;
                 })
         }
@@ -32,22 +32,9 @@ const Home = () => {
             getUrl()
     }, [fb, slug])
 
-    useEffect(() => {
-
-        if (authState.email !== "") {
-            getUrlHistory()
-                .then(urlHistory => {
-                    authDispatch({
-                        type: "FETCH_HISTORY",
-                        payload: { urlHistory }
-                    })
-                })
-        }
-    }, [authState.email])
-
     const getUrlHistory = async () => {
         const snapshot = await fb.db.collection("UrlItems")
-            .where("email", "==", authState.email)
+            .where("email", "==", authContext.authState.email)
             .get()
         const items = snapshot.docs.map(doc => {
             return doc.data();
@@ -55,12 +42,25 @@ const Home = () => {
         return items
     }
 
+    useEffect(() => {
+
+        if (emailAuth !== "") {
+            getUrlHistory()
+                .then(urlHistory => {
+                    authContext.authDispatch({
+                        type: "FETCH_HISTORY",
+                        payload: { urlHistory }
+                    })
+                })
+        }
+    }, [emailAuth])
+
+   
+
     const postShorteningAction = async (item) => {
-        console.log("aaaa")
         setUrlItem(item);
         const urlHistory = await getUrlHistory()
-        console.log("Post shortentening", urlHistory)
-        authDispatch({
+        authContext.authDispatch({
             type: "FETCH_HISTORY",
             payload: { urlHistory }
         })
