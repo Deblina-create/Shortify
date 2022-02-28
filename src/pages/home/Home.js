@@ -55,7 +55,7 @@ const Home = () => {
         }
     }, [emailAuth])
 
-   
+
 
     const postShorteningAction = async (item) => {
         setUrlItem(item);
@@ -75,7 +75,12 @@ const Home = () => {
                 {urlItem ? <Shortened urlItem={urlItem} /> : ''}
 
             </div>
-            <ShorteningHistory className="ShorteningcontainerHistory"/>
+            <h3>{authContext && authContext.authState && authContext.authState.email && authContext.authState.email !== "" ? 'Shortening History' : 'Login to record history'}
+            {authContext && authContext.authState && authContext.authState.email && authContext.authState.email !== "" ? <svg xmlns="http://www.w3.org/2000/svg" class="downIcon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
+            </svg> : ''}</h3>
+        
+            <ShorteningHistory className="ShorteningcontainerHistory" />
         </>
     )
 }
