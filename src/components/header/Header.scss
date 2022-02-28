@@ -1,0 +1,22 @@
+header {
+    font-size: 4rem;
+    text-align: center;
+    a {
+        color: aquamarine;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: aquamarine;
+    margin-right: 10%;
+    padding-top: 1%;
+
+    .loginContainerChild {
+        margin: 5px;
+    }
+}

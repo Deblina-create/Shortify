@@ -1,0 +1,44 @@
+.containerHistory{
+    padding-bottom: 10%;
+    .originalurlplace{
+        color: rgb(154, 156, 156);
+        width: 20%;
+        word-break: break-all;
+    }
+    .shortenedurlplace{
+        width: 20%;
+        color: aquamarine;
+       
+        a {
+            &:link {
+                color: aquamarine;
+                background-color: transparent;
+                text-decoration: none;
+                width: 20px;
+              }
+              &:hover {
+                color: rgb(154, 156, 156);
+                background-color: transparent;
+                text-decoration: underline;
+              }
+        }
+        @media only screen and (max-width: 480px){
+            a {
+                &:link {
+                    color: aquamarine;
+                    background-color: transparent;
+                    text-decoration: none;
+                    width: 10px;
+                    word-break: break-all;
+                  }
+                  &:hover {
+                    color: rgb(154, 156, 156);
+                    background-color: transparent;
+                    text-decoration: underline;
+                  }
+            }
+
+        }
+    
+}
+}
